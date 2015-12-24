@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+        <script>
+            var dataURL = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=ddb80380-f1b3-4f8e-8016-7ed9cba571d5&limit=100&offset=200";
+            var jsonpURL = "http://json2jsonp.com/";
+
+            function cbfunc( data ) {
+                console.log(JSON.stringify(data));
+            }
+            $.ajax({
+                url: jsonpURL,
+                dataType: 'jsonp',
+                jsonpCallback: 'cbfunc',
+                data: {
+                    url: dataURL
+                }
+            });
+        </script>
+</head>
+</html>
